@@ -1,0 +1,23 @@
+.card {
+  display: flex;
+  row-gap: var(--spacing-x06);
+  grid-area: content;
+  flex-direction: column;
+  justify-self: center;
+  box-shadow: var(--box-shadow-01);
+  border-radius: var(--border-radius-01);
+  background: var(--color-primary);
+  padding-inline: var(--spacing-x12);
+  padding-block: var(--spacing-x06);
+  width: 100%;
+  max-width: 44.8rem;
+
+  @media (width >= 768px) {
+    grid-area: content;
+    padding: var(--spacing-x12);
+  }
+
+  h2 {
+    color: var(--color-secondary);
+  }
+}
