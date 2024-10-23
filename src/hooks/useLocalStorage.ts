@@ -1,24 +1,32 @@
-// Updated useLocalStorage hook with generics
-export function useLocalStorage<T>(key: string) {
-  // Set item: Storing values to local storage
-  const setItem = (value: T) => {
+export function useLocalStorage<LocalStorage>(key: string) {
+
+  const setItem = (value: LocalStorage) => {
+    if (!value) return
     try {
       window.localStorage.setItem(key, JSON.stringify(value));
     } catch (error) {
-      console.log(error?.message);
+      console.error(error);
     }
   };
 
-  // Get item: Getting stored values from local storage
-  const getItem = (): T | undefined => {
+  const getItem = (): LocalStorage | undefined => {
     try {
       const item = window.localStorage.getItem(key);
-      return item ? (JSON.parse(item) as T) : undefined;
+      return item ? (JSON.parse(item) as LocalStorage) : undefined;
     } catch (error) {
-      console.log(error?.message);
+      console.error(error);
       return undefined;
     }
   };
 
-  return { setItem, getItem };
+  const removeItem = () => {
+    try {
+      window.localStorage.removeItem(key);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+
+  return { setItem, getItem, removeItem };
 }
