@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { Variants, motion } from "framer-motion";
 import styles from "./styles.module.css";
 
 export interface InputProps {
@@ -8,7 +8,7 @@ export interface InputProps {
   value?: string | number | readonly string[];
   onBlur?: React.FocusEventHandler<HTMLInputElement>;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
-  variants?: any;
+  variants?: Variants;
   id?: string;
 }
 
