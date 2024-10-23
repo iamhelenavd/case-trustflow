@@ -2,12 +2,18 @@
   position: relative;
   border-radius: var(--border-radius-01);
   background-color: var(--color-tertiary);
-
-  &.content {
-    grid-area: :content;
-  }
+  padding: var(--spacing-x08) var(--spacing-x03);
 
   &.full {
     grid-area: content;
+  }
+
+  &.content {
+    grid-area: content;
+  }
+
+  &.center {
+    display: flex;
+    justify-content: center;
   }
 }

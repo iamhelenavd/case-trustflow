@@ -33,7 +33,7 @@ function RequestSection() {
   };
   return (
     <div className="grid">
-      <Wrapper gridArea="content">
+      <Wrapper gridArea="content" itemPosition="center">
         <Image styling="header" />
         {!summary ? (
           <RequestForm onFormSubmit={handleFormSubmit} />
