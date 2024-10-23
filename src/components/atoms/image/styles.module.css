@@ -1,0 +1,12 @@
+.image {
+  position: absolute;
+  object-fit: scale-down;
+
+  &.header {
+    top: -3%;
+    left: 0;
+    z-index: 1;
+    max-width: 250px;
+    object-fit: scale-down;
+  }
+}
