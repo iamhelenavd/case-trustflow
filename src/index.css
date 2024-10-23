@@ -14,6 +14,7 @@ html {
 }
 
 body {
+  background-color: var(--color-primary);
   font-size: var(--base-font-size);
 }
 
@@ -26,24 +27,26 @@ h1 {
 }
 
 h2 {
+  color: var(--color-quinary);
   font-size: 2rem;
   line-height: 1.4;
-  color: var(--color-quinary);
 }
 
 :root {
-  font-family: var(--base-font-family);
-  font-optical-sizing: auto;
+  font-style: normal;
   font-weight: var(--base-font-weight);
   line-height: 1.4;
-  font-style: normal;
+  font-family: var(--base-font-family);
+  font-optical-sizing: auto;
 
   /* font-size */
   --base-font-family: "Noto Sans", Arial, sans-serif;
   --base-font-size: 1.6rem;
   --base-font-weight: 400;
 
-  //TODO: check validation colors
+  /* font-weight */
+  --bold-font-weight: 600;
+
   /* main colors */
   --color-primary: #ffff;
   --color-secondary: #002597;
@@ -54,10 +57,9 @@ h2 {
   --color-black: black;
   --color-gray: #999;
 
-  //TODO: check validation colors
   /* validation */
   --error-color: rgb(84 105 212 / 0.5);
-  --valid-color: rgb(84 105 212 / 0.5);
+  --valid-color: green;
   --aware-color: rgb(84 105 212 / 0.5);
   --outline-color-01: rgb(84 105 212 / 0.5);
 
@@ -82,12 +84,11 @@ h2 {
   --border-radius-01: var(--spacing-x05);
   --border-radius-02: var(--spacing-x01);
 
-  //TODO: check transitions
   /* transitions */
   --transition-01: transform 250ms ease;
   --transition-02: opacity 250ms ease;
+  --transition-03: background-color 300ms ease, box-shadow 300ms;
 
-  //TODO: check box-shadow colors
   /* box-shadows */
   --box-shadow-01: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px,
     rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
@@ -106,4 +107,55 @@ h2 {
 
   /* gradients */
   --gradient-10: rgb(0 0 0 / 30%);
+}
+
+.policy {
+  color: var(--color-secondary);
+}
+
+.hero {
+  margin-block-end: var(--spacing-x04);
+}
+
+.grid {
+  --column-gap: var(--spacing-x07);
+  --grid-padding: var(--spacing-x04);
+
+  display: grid;
+
+  grid-template-columns: [full-start content-start] repeat(4, 1fr) [content-end full-end];
+  justify-content: center;
+  gap: var(--column-gap);
+  column-gap: var(--column-gap);
+  padding: var(--grid-padding);
+
+  @media (width >= 768px) {
+    grid-template-columns:
+      [full-start] calc(48px - var(—column-gap)) [content-start] repeat(12, 1fr)
+      [content-end] calc(48px - var(—column-gap)) [full-end];
+  }
+
+  @media (width >= 1440px) {
+    grid-template-columns:
+      [full-start] auto [content-start] repeat(12, minmax(auto, 80px))
+      [content-end] auto [full-end];
+  }
+}
+
+span {
+  display: block;
+  color: #1a1f36;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+li {
+  background-color: rgba(0, 0, 0, 0.02);
+  padding: 8px 16px;
+  width: 100%;
+  min-height: 44px;
+  /* margin-bottom: 24px; */
+  font-size: 16px;
+  line-height: 28px;
+  list-style-type: none;
 }
