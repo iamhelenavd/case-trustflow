@@ -3,6 +3,8 @@ import SummaryCard from "../../molecules/summaryCard/Component";
 import RequestForm, { RequestSchema } from "../../organisms/form/Component";
 import { useLocalStorage } from "../../../hooks/useLocalStorage";
 import Wrapper from "../../atoms/wrapper/Component";
+import { startConfetti } from "../../../utils/animations/confetti/confetti";
+import Image from "../../atoms/image/Component";
 
 function RequestSection() {
   const { getItem, setItem } = useLocalStorage<RequestSchema | undefined>(
