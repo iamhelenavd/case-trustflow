@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { Variants, motion } from "framer-motion";
 import styles from "./styles.module.css";
 import clsx from "clsx";
 
@@ -6,9 +6,10 @@ export interface ButtonProps {
   label: string;
   type: "button" | "submit";
   onClick?: () => void;
-  variants?: any;
+  variants?: Variants;
   className?: string;
   isSubmitted?: boolean;
+  disabled?: boolean;
 }
 
 const Button = ({ label, ...props }: ButtonProps) => {
