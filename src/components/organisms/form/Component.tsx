@@ -5,7 +5,10 @@ import { requestSchema } from "../../../utils/validation/requestSchema";
 import { useState } from "react";
 import { useLocalStorage } from "../../../hooks/useLocalStorage";
 import { motion } from "framer-motion";
-import { container, item } from "../../../utils/animations/framerMotion";
+import {
+  container,
+  item,
+} from "../../../utils/animations/framerMotion/variants";
 import Button from "../../atoms/button/Component";
 import Label from "../../atoms/label/Component";
 import styles from "./styles.module.css";
