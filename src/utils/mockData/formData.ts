@@ -34,6 +34,7 @@ export const formData = {
     edit: "Nee wijzig",
     send: "Ja verstuur",
     thanks: "Bedankt",
+    check: 'Ga verder'
   },
   logo: {
     alt: "logo Trustflow",
