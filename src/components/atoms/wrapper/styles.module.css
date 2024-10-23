@@ -1,0 +1,13 @@
+.wrapper {
+  position: relative;
+  border-radius: var(--border-radius-01);
+  background-color: var(--color-tertiary);
+
+  &.content {
+    grid-area: :content;
+  }
+
+  &.full {
+    grid-area: content;
+  }
+}
