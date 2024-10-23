@@ -8,14 +8,15 @@ export interface WrapperProps {
 }
 
 const Wrapper = (props: WrapperProps) => {
+  const { gridArea, itemPosition, ...rest } = props;
   return (
     <div
       className={clsx(styles.wrapper, {
-        [styles.content]: props.gridArea === "content",
-        [styles.full]: props.gridArea === "full",
-        [styles.center]: props.itemPosition === "center",
+        [styles.content]: gridArea === "content",
+        [styles.full]: gridArea === "full",
+        [styles.center]: itemPosition === "center",
       })}
-      {...props}
+      {...rest}
     />
   );
 };
