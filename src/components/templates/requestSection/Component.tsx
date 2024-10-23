@@ -7,9 +7,9 @@ import { startConfetti } from "../../../utils/animations/confetti/confetti";
 import Image from "../../atoms/image/Component";
 
 function RequestSection() {
-  const { getItem, setItem } = useLocalStorage<RequestSchema | undefined>(
-    "formValues",
-  ); // Hier geef je de key door
+  const { getItem, setItem, removeItem } = useLocalStorage<
+    RequestSchema | undefined
+  >("formValues");
   const [formValue, setFormValue] = useState<RequestSchema | undefined>();
   const [summary, setSummary] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -17,25 +17,25 @@ function RequestSection() {
   const handleFormSubmit = (value: RequestSchema) => {
     setFormValue(value);
     setSummary(true);
-    setItem(value); // Hier slaat je de waarde op in localStorage
+    setItem(value);
   };
 
   const handleSummarySubmit = () => {
-    console.log("isSubmitted", getItem());
-    setItem("");
+    console.log("isSubmitted 🎉", getItem());
     setIsSubmitted(true);
     startConfetti();
+    removeItem();
   };
 
   const handleBack = () => {
-    console.log("back");
     setSummary(false);
   };
+
   return (
     <div className="grid">
       <Wrapper gridArea="content" itemPosition="center">
         <Image styling="header" />
-        {!summary ? (
+        {!summary || !formValue ? (
           <RequestForm onFormSubmit={handleFormSubmit} />
         ) : (
           <SummaryCard
