@@ -1,7 +1,7 @@
 export const formData = {
   form: {
     title: "Aanvraagformulier",
-    welcome: "Hi",
+    welcome: "Hi.",
     firstName: "Voornaam",
     lastName: "Achternaam",
     dateOfBirth: "Wat is je verjaardag?",
