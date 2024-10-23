@@ -1,0 +1,35 @@
+.button {
+  all: unset;
+  transition: var(--transition-03);
+  cursor: pointer;
+  box-shadow: var(--box-shadow-02);
+  border-radius: var(--border-radius-01);
+  background-color: var(--color-secondary);
+  padding: var(--spacing-x02) var(--spacing-x08);
+  width: fit-content;
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: var(--base-font-size);
+  line-height: 1.75;
+
+  &:hover,
+  &:active {
+    box-shadow: var(--box-shadow-04);
+    background-color: var(--color-quaternairy);
+  }
+
+  &:focus-visible {
+    outline-color: var(--color-quaternairy);
+  }
+
+  &.isSubmitted {
+    box-shadow: none;
+    border: none;
+    background-color: var(--valid-color);
+    pointer-events: none;
+
+    &:focus {
+      outline: 5px auto var(--valid-color);
+    }
+  }
+}
