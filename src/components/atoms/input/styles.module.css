@@ -1,0 +1,18 @@
+.input {
+  outline-color: var(--outline-color-01);
+  box-shadow: var(--box-shadow-03);
+  border: unset;
+  border-radius: var(--border-radius-02);
+  background-color: var(--color-primary);
+  padding: var(--spacing-x02) var(--spacing-x04);
+  width: 100%;
+  min-height: 4.4rem;
+  color: var(--color-gray);
+  font-size: var(--base-font-size);
+  line-height: 1.75;
+  font-family: var(--base-font-family);
+
+  &:focus {
+    color: var(--color-secondary);
+  }
+}
