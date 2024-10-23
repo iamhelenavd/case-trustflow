@@ -2,7 +2,6 @@ import { FieldApi, useForm } from "@tanstack/react-form";
 import { valibotValidator } from "@tanstack/valibot-form-adapter";
 import { localData } from "../../../utils/mockData/localData";
 import { requestSchema } from "../../../utils/validation/requestSchema";
-import { useState } from "react";
 import { useLocalStorage } from "../../../hooks/useLocalStorage";
 import { motion } from "framer-motion";
 import {
@@ -15,7 +14,7 @@ import styles from "./styles.module.css";
 import Select from "../../atoms/select/Component";
 import { formData } from "../../../utils/mockData/formData";
 import Input from "../../atoms/input/Component";
-import v from "valibot";
+import * as v from "valibot";
 
 export type RequestSchema = v.InferInput<typeof requestSchema>;
 
@@ -210,7 +209,11 @@ const RequestForm: React.FC<RequestFormProps> = ({ onFormSubmit }) => {
           </>
         )}
       />
-      <Button type="submit" label={formData.button.check} />
+      <Button
+        type="submit"
+        data-testid="submitForm"
+        label={formData.button.check}
+      />
     </motion.form>
   );
 };

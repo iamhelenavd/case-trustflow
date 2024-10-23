@@ -25,7 +25,7 @@ export const EmptyForm: Story = {
     await userEvent.clear(canvas.getByTestId("dateOfBirth"));
     await userEvent.clear(canvas.getByTestId("email"));
     await userEvent.selectOptions(canvas.getByRole("combobox"), "");
-    await userEvent.click(canvas.getByRole("button", { type: /submit/i }));
+    await userEvent.click(canvas.getByTestId('submitForm'));
     await waitFor(() => {
       expect(canvas.getByTestId("field-error-firstName")).toBeInTheDocument();
       expect(canvas.getByTestId("field-error-lastName")).toBeInTheDocument();
@@ -52,6 +52,6 @@ export const FilledForm: Story = {
       "helena.dorp@example.com",
     );
     await userEvent.selectOptions(canvas.getByRole("combobox"), "Premium Plan");
-    await userEvent.click(canvas.getByRole("button", { type: /submit/i }));
+    await userEvent.click(canvas.getByTestId('submitForm'));
   },
 };
