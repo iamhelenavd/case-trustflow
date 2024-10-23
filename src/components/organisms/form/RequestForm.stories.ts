@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { within, userEvent, waitFor, expect, fireEvent } from "@storybook/test";
-import RequestForm  from "./Component";
+import RequestForm from "./Component";
 
 const meta: Meta<typeof RequestForm> = {
   title: "Organism/RequestForm",
@@ -41,10 +41,10 @@ export const FilledForm: Story = {
 
     await userEvent.clear(canvas.getByTestId("firstName"));
     await userEvent.type(canvas.getByTestId("firstName"), "Helena");
-    await userEvent.clear(canvas.getByTestId("lastName")); 
+    await userEvent.clear(canvas.getByTestId("lastName"));
     await userEvent.type(canvas.getByTestId("lastName"), "van Dorp");
     const dateInput = canvas.getByTestId("dateOfBirth");
-    await userEvent.clear(canvas.getByTestId("dateOfBirth")); 
+    await userEvent.clear(canvas.getByTestId("dateOfBirth"));
     await fireEvent.change(dateInput, { target: { value: "1991-06-21" } });
     await userEvent.clear(canvas.getByTestId("email"));
     await userEvent.type(

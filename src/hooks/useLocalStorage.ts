@@ -1,7 +1,6 @@
 export function useLocalStorage<LocalStorage>(key: string) {
-
   const setItem = (value: LocalStorage) => {
-    if (!value) return
+    if (!value) return;
     try {
       window.localStorage.setItem(key, JSON.stringify(value));
     } catch (error) {
@@ -26,7 +25,6 @@ export function useLocalStorage<LocalStorage>(key: string) {
       console.error(error);
     }
   };
-
 
   return { setItem, getItem, removeItem };
 }

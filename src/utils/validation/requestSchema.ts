@@ -16,7 +16,6 @@ export const requestSchema = v.object({
     v.string(),
     v.nonEmpty("A.u.b. vul hier je geboortedatum in."),
     v.custom((value) => {
-
       const today = new Date();
       const birthDate = new Date(value as string);
       const isValidDate = !isNaN(birthDate.getTime());
@@ -26,7 +25,7 @@ export const requestSchema = v.object({
           today.getMonth() >= birthDate.getMonth() &&
           today.getDate() >= birthDate.getDate());
 
-          return isValidDate && isAdult;
+      return isValidDate && isAdult;
     }, "Je moet minimaal 18 jaar zijn"),
   ),
   email: v.pipe(
