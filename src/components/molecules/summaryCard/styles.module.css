@@ -1,4 +1,4 @@
-.card {
+.summaryCard {
   display: flex;
   row-gap: var(--spacing-x06);
   grid-area: content;
@@ -16,8 +16,12 @@
     grid-area: content;
     padding: var(--spacing-x12);
   }
+}
 
-  h2 {
-    color: var(--color-secondary);
-  }
+.summaryCard h2 {
+  color: var(--color-secondary);
+}
+.summaryCard button {
+  display: flex;
+  align-self: center;
 }

@@ -2,7 +2,6 @@
   display: flex;
   row-gap: var(--spacing-x02);
   flex-direction: column;
-  justify-self: center;
   box-shadow: var(--box-shadow-01);
   border-radius: var(--border-radius-01);
   background: var(--color-primary);
@@ -13,18 +12,19 @@
   @media (width >= 768px) {
     padding: var(--spacing-x12);
   }
+}
 
-  &.inputWrapper {
-    min-height: 6.8rem;
-  }
+.form button {
+  display: flex;
+  align-self: center;
+}
 
-  &.errorLabel {
-    color: var(--color-quaternairy);
-    font-style: italic;
-    font-size: 1.2rem;
-  }
+.inputWrapper {
+  min-height: 6.8rem;
+}
 
-  &button {
-    align-self: center;
-  }
+.errorLabel {
+  color: var(--color-quaternairy);
+  font-style: italic;
+  font-size: 1.2rem;
 }

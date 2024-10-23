@@ -27,7 +27,7 @@ const SummaryCard = (props: SummaryCardProps) => {
         initial="hidden"
         variants={container}
         animate="visible"
-        className={clsx(styles.card, props.className)}
+        className={clsx(styles.summaryCard, props.className)}
       >
         <motion.h1 variants={item}>
           {formData.form.welcome}
