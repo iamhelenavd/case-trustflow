@@ -12,19 +12,23 @@
   @media (width >= 768px) {
     padding: var(--spacing-x12);
   }
-}
 
-.form button {
-  display: flex;
-  align-self: center;
-}
+  & button {
+    display: flex;
+    align-self: center;
+  }
 
-.inputWrapper {
-  min-height: 6.8rem;
-}
+  & .policy {
+    color: var(--color-secondary);
+  }
 
-.errorLabel {
-  color: var(--color-quaternairy);
-  font-style: italic;
-  font-size: 1.2rem;
+  & .inputWrapper {
+    min-height: 6.8rem;
+  }
+
+  & .errorLabel {
+    color: var(--color-quaternairy);
+    font-style: italic;
+    font-size: 1.2rem;
+  }
 }

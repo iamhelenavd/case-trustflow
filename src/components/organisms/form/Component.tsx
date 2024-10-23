@@ -15,18 +15,16 @@ import styles from "./styles.module.css";
 import Select from "../../atoms/select/Component";
 import { formData } from "../../../utils/mockData/formData";
 import Input from "../../atoms/input/Component";
+import v from "valibot";
 
 export type RequestSchema = v.InferInput<typeof requestSchema>;
 
 interface RequestFormProps {
-  onFormSubmit: (value: RequestSchema) => void; // Callback prop
+  onFormSubmit: (value: RequestSchema) => void;
 }
 
 const RequestForm: React.FC<RequestFormProps> = ({ onFormSubmit }) => {
-  const [summary, setSummary] = useState(false);
-  const { getItem, setItem } = useLocalStorage<RequestSchema | undefined>(
-    "formValues",
-  );
+  const { getItem } = useLocalStorage<RequestSchema | undefined>("formValues");
 
   const form = useForm({
     defaultValues: {
@@ -41,16 +39,11 @@ const RequestForm: React.FC<RequestFormProps> = ({ onFormSubmit }) => {
       onSubmit: requestSchema,
     },
     onSubmit: async ({ value }) => {
-      // Do something with form data
-      // console.log(value)
-      setSummary(true);
-      setItem(value);
       onFormSubmit(value); // Trigger the callback to notify parent
     },
   });
 
   function FieldInfo({ field }: { field: FieldApi<any, any, any, any> }) {
-    console.log(field.state.value);
     return (
       <>
         {field.state.meta.isTouched && field.state.meta.errors.length ? (
@@ -58,10 +51,9 @@ const RequestForm: React.FC<RequestFormProps> = ({ onFormSubmit }) => {
             className={styles.errorLabel}
             data-testid={`field-error-${field.name}`}
           >
-            {field.state.meta.errors.join(",")}
+            {field.state.meta.errors.join(".")}
           </em>
         ) : null}
-        {field.state.meta.isValidating ? "Validating..." : null}
       </>
     );
   }
@@ -206,8 +198,8 @@ const RequestForm: React.FC<RequestFormProps> = ({ onFormSubmit }) => {
               <FieldInfo field={field} />
             </div>
             {field.state.value && (
-              <motion.p className="policy" variants={item}>
-                {formData.form.selectedPolicy}{" "}
+              <motion.p className={styles.policy} variants={item}>
+                {formData.form.selectedPolicy}
                 {form.getFieldValue(field.name)
                   ? localData.find(
                       (item) => item.name === form.getFieldValue(field.name),
@@ -218,15 +210,7 @@ const RequestForm: React.FC<RequestFormProps> = ({ onFormSubmit }) => {
           </>
         )}
       />
-      <Button variants={item} label="Submit" type="submit" />
-      {/* <form.Subscribe
-  selector={(state) => [state.canSubmit, state.isSubmitting]}
-  children={([canSubmit, isSubmitting]) => (
-    <button type="submit" disabled={!canSubmit}>
-      {isSubmitting ? '...' : 'Submit'}
-    </button>
-  )}
-/> */}
+      <Button type="submit" label={formData.button.check} />
     </motion.form>
   );
 };

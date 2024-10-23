@@ -1,6 +1,6 @@
 import { fireEvent, screen } from "@storybook/test";
 import { composeStories } from "@storybook/react";
-import * as stories from "./RequestForm.stories"; // 👈 Our stories imported here.
+import * as stories from "./RequestForm.stories";
 import { expect } from "@storybook/test";
 
 const { FilledForm } = composeStories(stories);
