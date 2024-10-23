@@ -17,6 +17,20 @@ body {
   font-size: var(--base-font-size);
 }
 
+h1 {
+  color: var(--color-secondary);
+  font-size: 2rem;
+  @media (width >= 768px) {
+    font-size: 3.6rem;
+  }
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 1.4;
+  color: var(--color-quinary);
+}
+
 :root {
   font-family: var(--base-font-family);
   font-optical-sizing: auto;
@@ -28,4 +42,68 @@ body {
   --base-font-family: "Noto Sans", Arial, sans-serif;
   --base-font-size: 1.6rem;
   --base-font-weight: 400;
+
+  //TODO: check validation colors
+  /* main colors */
+  --color-primary: #ffff;
+  --color-secondary: #002597;
+  --color-tertiary: #efefef;
+  --color-quaternairy: #ef3216;
+  --color-quinary: #1a1f36;
+
+  --color-black: black;
+  --color-gray: #999;
+
+  //TODO: check validation colors
+  /* validation */
+  --error-color: rgb(84 105 212 / 0.5);
+  --valid-color: rgb(84 105 212 / 0.5);
+  --aware-color: rgb(84 105 212 / 0.5);
+  --outline-color-01: rgb(84 105 212 / 0.5);
+
+  /* spacings */
+  --spacing-x01: 0.4rem;
+  --spacing-x02: 0.8rem;
+  --spacing-x03: 1.2rem;
+  --spacing-x04: 1.6rem;
+  --spacing-x05: 2rem;
+  --spacing-x06: 2.4rem;
+  --spacing-x07: 2.8rem;
+  --spacing-x08: 3.2rem;
+  --spacing-x09: 3.6rem;
+  --spacing-x10: 4rem;
+  --spacing-x11: 4.4rem;
+  --spacing-x12: 4.8rem;
+
+  /* borders */
+  --border-01: 1px solid var(--color-primary);
+
+  /* border radius */
+  --border-radius-01: var(--spacing-x05);
+  --border-radius-02: var(--spacing-x01);
+
+  //TODO: check transitions
+  /* transitions */
+  --transition-01: transform 250ms ease;
+  --transition-02: opacity 250ms ease;
+
+  //TODO: check box-shadow colors
+  /* box-shadows */
+  --box-shadow-01: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px,
+    rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
+  --box-shadow-02: rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px,
+    var(--color-secondary) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+  --box-shadow-03: rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    rgba(60, 66, 87, 0.16) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+  --box-shadow-04: rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px,
+    var(--color-quaternairy) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+
+  /* gradients */
+  --gradient-10: rgb(0 0 0 / 30%);
 }
