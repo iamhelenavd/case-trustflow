@@ -37,11 +37,13 @@ const SummaryCard = (props: SummaryCardProps) => {
           {formValue.firstName} {formValue.lastName}
         </motion.h2>
         <motion.h3 variants={item}>{formData.form.summary.check}</motion.h3>
-        <motion.li variants={item}>{formValue.firstName}</motion.li>
-        <motion.li variants={item}>{formValue.lastName}</motion.li>
-        <motion.li variants={item}>{formValue.dateOfBirth}</motion.li>
-        <motion.li variants={item}>{formValue.email}</motion.li>
-        <motion.li variants={item}>{formValue.list}</motion.li>
+        <ul>
+          <motion.li variants={item}>{formValue.firstName}</motion.li>
+          <motion.li variants={item}>{formValue.lastName}</motion.li>
+          <motion.li variants={item}>{formValue.dateOfBirth}</motion.li>
+          <motion.li variants={item}>{formValue.email}</motion.li>
+          <motion.li variants={item}>{formValue.list}</motion.li>
+        </ul>
         <Button
           variants={item}
           type="button"
