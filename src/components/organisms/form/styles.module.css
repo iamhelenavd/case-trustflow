@@ -1,0 +1,32 @@
+.form {
+  display: flex;
+  row-gap: var(--spacing-x02);
+  grid-area: full;
+  flex-direction: column;
+  justify-self: center;
+  box-shadow: var(--box-shadow-01);
+  border-radius: var(--border-radius-01);
+  background: var(--color-primary);
+  padding: var(--spacing-x06) var(--spacing-x03);
+  width: 100%;
+  max-width: 44.8rem;
+
+  @media (width >= 768px) {
+    grid-area: content;
+    padding: var(--spacing-x12);
+  }
+
+  &.inputWrapper {
+    min-height: 6.8rem;
+  }
+
+  &.errorLabel {
+    color: var(--color-quaternairy);
+    font-style: italic;
+    font-size: 1.2rem;
+  }
+
+  &button {
+    align-self: center;
+  }
+}
