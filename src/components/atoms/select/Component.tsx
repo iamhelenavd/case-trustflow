@@ -1,9 +1,9 @@
-import { motion } from "framer-motion";
+import { Variants, motion } from "framer-motion";
 import styles from "./styles.module.css";
 import { localData } from "../../../utils/mockData/localData";
 
 export interface SelectProps {
-  variants?: any;
+  variants?: Variants;
   htmlFor?: string;
   label: string;
   placeholder?: string;
