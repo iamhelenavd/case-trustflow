@@ -1,4 +1,5 @@
 import type { Preview } from "@storybook/react";
+import "../src/index.css"; // Het pad naar je CSS-bestand
 
 const preview: Preview = {
   parameters: {
