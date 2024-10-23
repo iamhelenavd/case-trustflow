@@ -1,8 +1,8 @@
-import { motion } from "framer-motion";
+import { Variants, motion } from "framer-motion";
 import styles from "./styles.module.css";
 
 export interface LabelProps {
-  variants?: any;
+  variants?: Variants;
   htmlFor?: string;
   label: string;
 }
