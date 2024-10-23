@@ -1,0 +1,5 @@
+.label {
+  display: block;
+  font-weight: var(--bold-font-weight);
+  font-size: var(--base-font-size);
+}
