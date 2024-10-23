@@ -10,7 +10,7 @@ const Image = (props: IamgeProps) => {
   return (
     <img
       loading="lazy"
-      src="src/assets/images/logoTrustFlow.png"
+      src="images/logoTrustFlow.png"
       alt={formData.logo.alt}
       className={clsx(styles.image, {
         [styles.header]: props.styling === "header",
